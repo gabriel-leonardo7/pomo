@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <title>Pomo</title>
 </head>
+
 <body>
     <main class="mainContainer">
 
-        <div class="tittleContainer">
-            <div class="tittleHour">
-                25:00
-            </div>
+        <div class="tittleContainer" id="tittleContainer" >
+            <svg class="progressRing" viewBox="0 0 230 230" preserveAspectRatio="xMidYMid meet">
+                <circle class="progressRingCircle" stroke="rgb(11, 151, 69)" stroke-width="6" fill="transparent" r="110"
+                    cx="115" cy="115" />
+            </svg>
+            <div class="tittleHour" id="timerText"></div>
+            <div id="start" class="start"></div>
+            
         </div>
 
-        <span class="text">Study focused for 25 minutes and see the results comming</span>
 
-        <div class="buttonsStudy">
+        <span class="textTittle">Study focused for some minutes and see the results comming</span>
 
-            <div class="button">
-                60:00 
+        <div id="openOptionsTime" class="openOptionsTime">
+            Change my Focus or Rest time
+        </div>
+        
+
+        <div id="focusText" class="focusText">I will stay focus for <div id="focusTime" class="focusTime"> &nbsp; &nbsp; &nbsp; &nbsp; </div> Minutes </div>
+
+        <div id="buttonsStudy" class="buttonsStudy">
+
+
+            <div class="button focus">
+                60:00
             </div>
 
-            <div class="button">
+            <div class="button focus">
                 30:00
             </div>
-            
-            <div class="button">
+
+            <div class="button focus">
                 25:00
             </div>
 
-            <div class="button">
+            <div class="button focus">
                 15:00
             </div>
         </div>
 
-        <div class="buttonsInterval">
-            <div class="button Interval">
+        <div id="intervalText" class="intervalText">I will rest for <div id="intervalTime" class="intervalTime"> &nbsp; &nbsp; &nbsp; &nbsp;  </div> Minutes </div>
+
+        <div id="buttonsInterval" class="buttonsInterval">
+            <div class="button interval">
                 20:00
             </div>
 
-            <div class="button Interval">
+            <div class="button interval">
                 15:00
             </div>
 
-            <div class="button Interval">
+            <div class="button interval">
                 10:00
             </div>
 
-            <div class="button Interval">
+            <div class="button interval">
                 5:00
             </div>
         </div>
@@ -67,16 +83,18 @@
         <div class="studyContent">
             <p>Select a current task to do</p>
 
-            <div class="openSelect">Select a task <i class="fa-solid fa-chevron-down"></i></div>
+            <div id="actualTask" class="openSelect">Select a task<i class="fa-solid fa-chevron-down"></i></div>
+
             <ul class="select">
-                <li class="option">Css</li>
-                <li class="option">React.js</li>
-                <li class="option">Unity 2d</li>
+                <li style="color: rgba(255, 255, 255, 0.418);" id="option" class="option">Undefined</li>
             </ul>
-            
+
 
             <p>Add a new Task to do</p>
-            <textarea name="contentText" id="contentText"></textarea>
+            <div class="registerTask">
+                <textarea placeholder="what will study?" name="contentText" id="contentText"></textarea> 
+                <div id="register" class="register"><i class="fa-solid fa-plus"></i></div>
+            </div>
         </div>
 
     </main>
@@ -84,4 +102,5 @@
     <script src="scripts.js"></script>
 
 </body>
+
 </html>
